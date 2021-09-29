@@ -1,9 +1,10 @@
+from constants import headers, servers
+from bs4 import BeautifulSoup as Bs
+from collections import defaultdict
 import requests
 import json
-from collections import defaultdict
-from bs4 import BeautifulSoup as Bs
-from constants import headers, servers
 import time
+
 
 # CREATE ENGLISH LANGUAGE WORDLIST SET
 print("Creating wordlist...")
@@ -15,8 +16,6 @@ print("DONE.\n")
 
 session = requests.Session()
 
-# SERVERS YOU WANT TO TARGET
-servers = ["EUW", "EUNE", "NA", "TR"]
 total_time = 0
 for server in servers:
     before = time.time()
