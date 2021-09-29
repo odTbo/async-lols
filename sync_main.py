@@ -2,7 +2,7 @@ import requests
 import json
 from collections import defaultdict
 from bs4 import BeautifulSoup as Bs
-from constants import headers
+from constants import headers, servers
 import time
 
 # CREATE ENGLISH LANGUAGE WORDLIST SET

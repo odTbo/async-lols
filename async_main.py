@@ -1,4 +1,4 @@
-from constants import headers, url, css_selector
+from constants import headers, url, css_selector, servers
 from bs4 import BeautifulSoup as Bs
 from collections import defaultdict
 from aiohttp import ClientSession
@@ -9,7 +9,6 @@ import json
 import time
 # https://stackoverflow.com/questions/21159103/what-kind-of-problems-if-any-would-there-be-combining-asyncio-with-multiproces
 
-servers = ["EUW", "EUNE"]
 wl_path = "english-words-master/words.txt"
 
 
