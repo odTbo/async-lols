@@ -1,12 +1,13 @@
-import json
-from collections import defaultdict
-from bs4 import BeautifulSoup as Bs
 from constants import headers, url, css_selector
+from bs4 import BeautifulSoup as Bs
+from collections import defaultdict
+from aiohttp import ClientSession
 from functools import partial
 import multiprocessing
-from aiohttp import ClientSession
-import time
 import asyncio
+import json
+import time
+# https://stackoverflow.com/questions/21159103/what-kind-of-problems-if-any-would-there-be-combining-asyncio-with-multiproces
 
 servers = ["EUW", "EUNE"]
 wl_path = "english-words-master/words.txt"
@@ -43,11 +44,10 @@ def parse_html(wordlist: set, content: dict) -> None:
     html = content["html"]
     server = content["server"]
 
+    print("Parsing {}...".format(server))
     soup = Bs(html, "html.parser")
     table = soup.select(css_selector)
     assert len(table) != 0
-
-    print(f"Number of potential names: {len(table)}")
 
     data = []
     for row in table:
@@ -70,8 +70,8 @@ def parse_html(wordlist: set, content: dict) -> None:
 
 def save_data(data, server) -> None:
     """Outputs data to json file."""
-    # Transform data to dictionary {'days': [name, name...], ...}
-    d = defaultdict(list)
+
+    d = defaultdict(list) # {'num_days': [name, name...], ...}
     for k, v in data:
         d[k].append(v)
 

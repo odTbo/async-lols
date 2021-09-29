@@ -4,7 +4,6 @@ from collections import defaultdict
 from bs4 import BeautifulSoup as Bs
 from constants import headers
 import time
-# from english_words import english_words_lower_alpha_set
 
 # CREATE ENGLISH LANGUAGE WORDLIST SET
 print("Creating wordlist...")
