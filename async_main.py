@@ -9,10 +9,8 @@ import json
 import time
 # https://stackoverflow.com/questions/21159103/what-kind-of-problems-if-any-would-there-be-combining-asyncio-with-multiproces
 
-wl_path = "english-words-master/words.txt"
 
-
-def create_wordlist() -> set:
+def create_wordlist(wl_path="english-words-master/words.txt") -> set:
     """Creates set of clean english words."""
 
     with open(wl_path) as file:
