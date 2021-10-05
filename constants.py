@@ -8,4 +8,4 @@ url = "https://lols.gg/en/name/lists/{}/All%20Upcoming%20Names/Only%20letters/"
 css_selector = "#kt_content > div > div > div > div > div > div > div > table > tbody > tr"
 
 # Servers to scrape
-servers = ["EUW", "EUNE"]
+servers = ["EUW", "EUNE", "NA", "TR", "LAN"]

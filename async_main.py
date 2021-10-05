@@ -94,11 +94,11 @@ if __name__ == '__main__':
 
     content = asyncio.get_event_loop().run_until_complete(main())
 
-    pool = multiprocessing.Pool(4)
+    pool = multiprocessing.Pool()
     func = partial(parse_html, wl)
     pool.map(func, content)
     pool.close()
 
     after = time.time()
     result = round(after - before, 2)
-    print("Runtime: {}s".format(result))
+    print("ASYNC Runtime: {}s".format(result))
