@@ -85,4 +85,4 @@ for server in servers:
     total_time += time_spent
     print(f"DONE. (Time passed {time_spent}s)\n")
 
-print(f"SYNC finished in {round(total_time, 2)}s.")
+print("SYNC Runtime: {}s".format(round(total_time, 2)))
